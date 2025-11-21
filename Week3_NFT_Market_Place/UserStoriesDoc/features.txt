@@ -1,0 +1,52 @@
+###Listing Module
+
+1) Lock NFT in PDA vault
+2) Store listing info
+3) Who is the owner
+
+#####Offer Module
+
+4) User sends their NFT to escrow PDA
+5) Store offer details:
+     Offered NFT mint
+     Optional SPL token amount
+     Optional SOL amount
+
+########Matching & Swap Logic
+
+6) When seller accepts an offer 
+
+    The seller’s NFT is transferred into the buyer’s ATA.(SellerVaultPDA --NFT --→   BuyerATA)
+    After the seller’s NFT goes to the buyer, the seller receives the tokens the buyer offered in the trade.
+    Close escrow accounts
+
+
+Before Swap
+
+SellerNFT → SellerVaultPDA (Seller of Lister NFT in its vault)
+BuyerNFT  → BuyerVaultPDA (Similarly Buyers NFT in his/her pda vault)
+
+After Swap 
+
+SellerNFT → BuyerATA ( Seller NFT moves to buyers ATA)
+BuyerNFT  → SellerATA ( Buyers NFT goes to Sellers ATA)
+
+
+7) Cancel Actions (Both buyer and seller can change their mind and withdraw the offer during its listed and get back their tokens)
+
+  1) Seller cancels listing → return NFT
+  2) Buyer cancels offer → return NFT
+
+
+
+
+
+
+################################## ON-CHAIN INSTRUCTION FLOW  ##################################
+
+1) Create Listing
+2) Make Offer
+3) Accept Offer
+4) Cancel Listing (Seller)
+5) Cancel Offer (Buyer)
+

@@ -1,0 +1,54 @@
++-------------------+                     +---------------------+
+|     SELLER        |                     |       BUYER         |
++-------------------+                     +---------------------+
+            |                                          |
+            | 1. Wants to trade an NFT                 |
+            |----------------------------------------->|
+            |                                          |
+            | 2. Lists NFT on Marketplace              |
+            |                                          |
+            |----> (NFT locked in Seller Vault PDA)    |
+            |                                          |
+            |                                          |
+            |                                  3. Browses listings
+            |<-----------------------------------------|
+            |                                          |
+            |                                  4. Makes an Offer:
+            |                                  - chooses NFT to offer
+            |                                  - adds tokens/SOL (optional)
+            |                                          |
+            |<------------- Offer Created --------------|
+            |                (Buyer NFT locked in       |
+            |                 Buyer Vault PDA)          |
+            |                                          |
+  5. Seller reviews offers                              |
+            |                                          |
+            |---------------- Accept Offer ------------>|
+            |                                          |
+            |                                          |
++------------------------------------------------------------+
+|                      SWAP LOGIC (Atomic)                   |
+|                                                            |
+|  A) Seller's NFT → Buyer's ATA                             |
+|       SellerVaultPDA  ----NFT---->  BuyerATA               |
+|                                                            |
+|  B) Buyer's NFT → Seller's ATA                             |
+|       BuyerVaultPDA   ----NFT---->  SellerATA              |
+|                                                            |
+|  C) Buyer’s Tokens/SOL → Seller                            |
+|       OfferPDA ----tokens/SOL----> Seller                  |
+|                                                            |
+|  D) Close all PDAs:                                        |
+|       - Listing PDA                                        |
+|       - Offer PDA                                          |
+|       - Seller Vault ATA                                   |
+|       - Buyer Vault ATA                                    |
++------------------------------------------------------------+
+            |                                              |
+            | 6. Buyer receives Seller's NFT               |
+            |                                              |
+            | 7. Seller receives Buyer's NFT + Tokens/SOL  |
+            |                                              |
+            |------------------ SUCCESS -------------------|
+            |                                              |
+
