@@ -1,0 +1,7 @@
+A Two-Sided NFT Swap Marketplace
+
+1) Each product is represented by an NFT token
+2) Users can list their NFT for swap
+3) Other users can offer their NFT in return
+4) When both parties agree, swap happens through escrow PDA
+5) All swaps happen on-chain and automatically trustless

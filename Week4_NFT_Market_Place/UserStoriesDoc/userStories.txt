@@ -1,0 +1,27 @@
+######USERS######
+
+1) Buyer
+2) Seller
+
+STORIES
+
+#####Seller/Lister######
+
+1) As a seller, I want to list my NFT for swap, so others can offer their NFTs
+2) As a seller, I want to specify what kind of NFT I want in return
+3) As a seller, I want to cancel my listing anytime and get back my NFT. 
+
+
+
+#####Buyer/OfferMaker######
+
+4) As a trader, I want to view all listings with metadata & filters
+5) As a trader, I want to offer my NFT in exchange for someone’s listing
+6) As a trader, I want to withdraw my offer before the seller accepts it.
+
+
+#######Swap Stories########
+
+7) As a seller, I want to accept an offer (Market Place will automatically do the swapping)
+8) As seller OR buyer, I want to see swap history
+
