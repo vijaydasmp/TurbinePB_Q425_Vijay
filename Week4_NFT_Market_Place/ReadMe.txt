@@ -3,7 +3,6 @@ NFT Swap Marketplace
 A Trustless, Two-Sided NFT-for-NFT Swap Platform on Solana
 
 This project implements a decentralized NFT swap marketplace that enables users to exchange NFTs directly with one another through a fully on-chain escrow mechanism.
-Built using Solana, Anchor 0.31.1, and program-owned PDAs, the system ensures secure, atomic NFT exchanges without requiring trust between participants.
 
 Features
 Peer-to-Peer NFT Swaps
@@ -12,15 +11,15 @@ Enables users to trade NFTs directly, without needing to convert to tokens or re
 
 Secure Escrow Vaults (PDAs)
 
-Both the seller’s and buyer’s NFTs are held in program-owned escrow accounts, preventing unauthorized access or double spending.
+Both the sellers and buyers NFTs are held in program-owned escrow accounts, preventing unauthorized access or double spending.
 
 Atomic Swap Execution
 
 When the seller accepts an offer, the program performs an atomic swap in a single transaction:
 
-Seller’s NFT is transferred to the buyer
+Sellers NFT is transferred to the buyer
 
-Buyer’s NFT is transferred to the seller
+Buyers NFT is transferred to the seller
 
 Escrow accounts are closed automatically
 
